@@ -3,6 +3,11 @@
 namespace Database\Seeders;
 
 use App\Models\User;
+use App\Models\Unit;
+use App\Models\GasPrice;
+use App\Models\Route;
+use App\Models\Road;
+use App\Models\Toll;
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
@@ -16,8 +21,151 @@ class DatabaseSeeder extends Seeder
         // User::factory(10)->create();
 
         User::factory()->create([
-            'name' => 'Test User',
-            'email' => 'test@example.com',
+            'name' => 'Admin',
+            'email' => 'admin@gm.com',
+            'password' => 'admin'
         ]);
+
+        Unit::factory()->create([
+            'name' => 'Automovil',
+            'passenger_capacity' => 4
+        ]);
+        Unit::factory()->create([
+            'name' => 'Pick Up',
+            'passenger_capacity' => 4
+        ]);
+        Unit::factory()->create([
+            'name' => 'Motocicleta',
+            'passenger_capacity' => 2
+        ]);
+        Unit::factory()->create([
+            'name' => 'Autobus 2 Ejes',
+            'passenger_capacity' => 40
+        ]);
+        Unit::factory()->create([
+            'name' => 'Autobus 3 Ejes',
+            'passenger_capacity' => 60
+        ]);
+        Unit::factory()->create([
+            'name' => 'Autobus 4 Ejes',
+            'passenger_capacity' => 80
+        ]);
+        Unit::factory()->create([
+            'name' => 'Camion 2 Ejes',
+            'passenger_capacity' => 3
+        ]);
+        Unit::factory()->create([
+            'name' => 'Camion 3 Ejes',
+            'passenger_capacity' => 2
+        ]);
+        Unit::factory()->create([
+            'name' => 'Camion 4 Ejes',
+            'passenger_capacity' => 3
+        ]);
+        Unit::factory()->create([
+            'name' => 'Camion 5 Ejes',
+            'passenger_capacity' => 3
+        ]);
+        Unit::factory()->create([
+            'name' => 'Camion 6 Ejes',
+            'passenger_capacity' => 3
+        ]);
+        Unit::factory()->create([
+            'name' => 'Camion 7 Ejes',
+            'passenger_capacity' => 3
+        ]);
+        Unit::factory()->create([
+            'name' => 'Camion 8 Ejes',
+            'passenger_capacity' => 3
+        ]);
+        Unit::factory()->create([
+            'name' => 'Camion 9 Ejes',
+            'passenger_capacity' => 3
+        ]);
+
+        Route::factory()->create([
+            'name' => 'Mexical, Tecate Tijuana, Rosarito, Ensenada',
+            'departure_distance' => 290.05,
+            'return_distance' => 0,
+        ]);
+        Route::factory()->create([
+            'name' => 'Mexical, Tecate',
+            'departure_distance' => 129.75,
+            'return_distance' => 0,
+        ]);
+        Route::factory()->create([
+            'name' => 'Mexical, Tecate, Ensenada',
+            'departure_distance' => 266.55,
+            'return_distance' => 0,
+        ]);
+        Route::factory()->create([
+            'name' => 'Mexical, Tijuana',
+            'departure_distance' => 171.56,
+            'return_distance' => 0,
+        ]);
+
+        GasPrice::factory()->create([
+            'name' => 'Magna',
+            'price' => 22.13,
+        ]);
+        GasPrice::factory()->create([
+            'name' => 'Premium',
+            'price' => 23.61,
+        ]);
+        GasPrice::factory()->create([
+            'name' => 'Diesel',
+            'price' => 23.90,
+        ]);
+
+        Toll::factory()->create([
+            'name' => 'La Rumorosa',            
+        ]);
+        Toll::factory()->create([
+            'name' => 'El Hongo',            
+        ]);
+        Toll::factory()->create([
+            'name' => 'Tijuana',            
+        ]);
+        Toll::factory()->create([
+            'name' => 'Rosarito',            
+        ]);
+        Toll::factory()->create([
+            'name' => 'Ensenada',            
+        ]);
+        
+        Road::factory()->create([
+            'name' => 'Mexicali - Flor Del Desierto'
+        ]);
+        Road::factory()->create([
+            'name' => 'Flor Del Desierto - Entronque La Rumorosa',
+            'toll_id' => 1,
+        ]);
+        Road::factory()->create([
+            'name' => 'Entronque La Rumorosa - Libramiento de Tecate',
+            'toll_id' => 2,
+        ]);
+        Road::factory()->create([
+            'name' => 'Libramiento de Tecate - Ent. Tijuana',
+            'toll_id' => 3,
+        ]);
+        Road::factory()->create([
+            'name' => 'Entronque de Tijuana - Rosarito',
+        ]);
+        Road::factory()->create([
+            'name' => 'Rosarito - Entronque Rosarito',
+        ]);
+        Road::factory()->create([
+            'name' => 'Entronque Rosarito - Entronque La Mision',
+            'toll_id' => 4,
+        ]);
+        Road::factory()->create([
+            'name' => 'Entronque La Mision - San Miguel',
+            'toll_id' => 5,
+        ]);
+        Road::factory()->create([
+            'name' => 'San Miguel - Ensenada',
+        ]);
+
+
     }
 }
