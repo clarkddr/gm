@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\User;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
@@ -20,6 +21,7 @@ return new class extends Migration
             $table->datetime('departure');
             $table->datetime('return')->nullable();
             $table->integer('passengers');
+            $table->foreignIdFor(User::class);
             $table->foreignIdFor(Unit::class);
             $table->foreignIdFor(GasPrice::class);
             $table->foreignIdFor(Route::class,'departure_route');

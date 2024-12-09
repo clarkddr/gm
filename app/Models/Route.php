@@ -9,4 +9,8 @@ class Route extends Model
 {
     /** @use HasFactory<\Database\Factories\RouteFactory> */
     use HasFactory;
+
+    public function roads(){
+        return $this->belongsToMany(Road::class);
+    }
 }

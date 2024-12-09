@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Models\Budget;
 use App\Models\User;
 use App\Models\Unit;
 use App\Models\GasPrice;
@@ -10,6 +11,7 @@ use App\Models\Road;
 use App\Models\Toll;
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\DB;
 
 class DatabaseSeeder extends Seeder
 {
@@ -24,6 +26,11 @@ class DatabaseSeeder extends Seeder
             'name' => 'Admin',
             'email' => 'admin@gm.com',
             'password' => 'admin'
+        ]);
+        User::factory()->create([
+            'name' => 'user',
+            'email' => 'user@gm.com',
+            'password' => 'user'
         ]);
 
         Unit::factory()->create([
@@ -85,7 +92,7 @@ class DatabaseSeeder extends Seeder
 
         Route::factory()->create([
             'name' => 'Mexical, Tecate Tijuana, Rosarito, Ensenada',
-            'departure_distance' => 290.05,
+            'departure_distance' => 286.91,
             'return_distance' => 0,
         ]);
         Route::factory()->create([
@@ -118,21 +125,21 @@ class DatabaseSeeder extends Seeder
         ]);
 
         Toll::factory()->create([
-            'name' => 'La Rumorosa',            
+            'name' => 'La Rumorosa',
         ]);
         Toll::factory()->create([
-            'name' => 'El Hongo',            
+            'name' => 'El Hongo',
         ]);
         Toll::factory()->create([
-            'name' => 'Tijuana',            
+            'name' => 'Tijuana',
         ]);
         Toll::factory()->create([
-            'name' => 'Rosarito',            
+            'name' => 'Rosarito',
         ]);
         Toll::factory()->create([
-            'name' => 'Ensenada',            
+            'name' => 'Ensenada',
         ]);
-        
+
         Road::factory()->create([
             'name' => 'Mexicali - Flor Del Desierto'
         ]);
@@ -166,6 +173,54 @@ class DatabaseSeeder extends Seeder
             'name' => 'San Miguel - Ensenada',
         ]);
 
+        DB::table('road_route')->insert([
+            [
+                'route_id' => 1,
+                'road_id' => 1,
+                ],[
+                'route_id' => 1,
+                'road_id' => 2,
+                ],[
+                'route_id' => 1,
+                'road_id' => 3,
+                ],[
+                'route_id' => 1,
+                'road_id' => 4,
+                ],[
+                'route_id' => 1,
+                'road_id' => 5,
+                ],[
+                'route_id' => 1,
+                'road_id' => 6,
+                ],[
+                'route_id' => 1,
+                'road_id' => 7,
+                ],[
+                'route_id' => 1,
+                'road_id' => 8,
+                ],[
+                'route_id' => 1,
+                'road_id' => 9,
+                ],[
+                'route_id' => 2,
+                'road_id' => 1,
+                ],[
+                'route_id' => 3,
+                'road_id' => 1,
+                ],[
+                'route_id' => 4,
+                'road_id' => 1,
+            ]
+        ]);
 
+        Budget::factory()->create([
+            'user_id' => 1,
+            'type' => 'oneway',
+            'departure' => '2024-12-08 06:00:00',
+            'passengers' => 4,
+            'unit_id' => 1,
+            'gas_price_id' => 1,
+            'departure_route' => 1,
+        ]);
     }
 }

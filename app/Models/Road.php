@@ -9,4 +9,12 @@ class Road extends Model
 {
     /** @use HasFactory<\Database\Factories\RoadFactory> */
     use HasFactory;
+
+    public function toll(){
+        return $this->belongsTo(Toll::class);
+    }
+
+    public function routes (){
+        return $this->belongsToMany(Route::class);
+    }
 }

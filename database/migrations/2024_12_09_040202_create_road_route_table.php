@@ -14,10 +14,10 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('route_roads', function (Blueprint $table) {
+        Schema::create('road_route', function (Blueprint $table) {
             $table->id();
-            $table->foreignIdFor(Route::class);
             $table->foreignIdFor(Road::class);
+            $table->foreignIdFor(Route::class);
             $table->timestamps();
         });
     }
