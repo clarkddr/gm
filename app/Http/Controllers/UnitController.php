@@ -10,7 +10,7 @@ class UnitController extends Controller
     public function index(){
 
         $data = [
-          'units' => Unit::paginate(10)
+          'units' => Unit::paginate(15)
         ];
         return Inertia::render('Unit/Index', $data);
     }

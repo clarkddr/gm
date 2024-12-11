@@ -23,5 +23,8 @@ Route::middleware([
     Route::get('/gasprices', [App\Http\Controllers\GasPriceController::class, 'index'])->name('gasprices.index');
     Route::get('/units', [App\Http\Controllers\UnitController::class, 'index'])->name('units.index');
     Route::get('/routes', [App\Http\Controllers\RouteController::class, 'index'])->name('routes.index');
-    Route::resource('/budgets', App\Http\Controllers\BudgetController::class);
+//    Route::resource('/budgets', App\Http\Controllers\BudgetController::class);
+    Route::get('/budgets', [App\Http\Controllers\BudgetController::class, 'index'])->name('budgets.index');
+    Route::get('/budgets/preview', [App\Http\Controllers\BudgetController::class, 'preview'])->name('budgets.preview');
+    Route::post('/budgets/create', [App\Http\Controllers\BudgetController::class, 'create'])->name('budgets.create');
 });

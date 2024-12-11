@@ -93,22 +93,22 @@ class DatabaseSeeder extends Seeder
         Route::factory()->create([
             'name' => 'Mexical, Tecate Tijuana, Rosarito, Ensenada',
             'departure_distance' => 286.91,
-            'return_distance' => 0,
+            'return_distance' => 286.91,
         ]);
         Route::factory()->create([
             'name' => 'Mexical, Tecate',
             'departure_distance' => 129.75,
-            'return_distance' => 0,
+            'return_distance' => 129.75,
         ]);
         Route::factory()->create([
             'name' => 'Mexical, Tecate, Ensenada',
             'departure_distance' => 266.55,
-            'return_distance' => 0,
+            'return_distance' => 266.55,
         ]);
         Route::factory()->create([
             'name' => 'Mexical, Tijuana',
             'departure_distance' => 171.56,
-            'return_distance' => 0,
+            'return_distance' => 171.56,
         ]);
 
         GasPrice::factory()->create([
@@ -172,6 +172,9 @@ class DatabaseSeeder extends Seeder
         Road::factory()->create([
             'name' => 'San Miguel - Ensenada',
         ]);
+        Road::factory()->create([
+            'name' => 'Entronque Tijuana - Tijuana',
+        ]);
 
         DB::table('road_route')->insert([
             [
@@ -205,11 +208,334 @@ class DatabaseSeeder extends Seeder
                 'route_id' => 2,
                 'road_id' => 1,
                 ],[
+                'route_id' => 2,
+                'road_id' => 2,
+                ],[
+                'route_id' => 2,
+                'road_id' => 3,
+                ],[
+                'route_id' => 2,
+                'road_id' => 4,
+                ],[
                 'route_id' => 3,
                 'road_id' => 1,
                 ],[
+                'route_id' => 3,
+                'road_id' => 2,
+                ],[
+                'route_id' => 3,
+                'road_id' => 3,
+                ],[
+                'route_id' => 3,
+                'road_id' => 4,
+            ],[
+                'route_id' => 3,
+                'road_id' => 7,
+            ],[
+                'route_id' => 3,
+                'road_id' => 8,
+            ],[
+                'route_id' => 3,
+                'road_id' => 9,
+            ],[
                 'route_id' => 4,
                 'road_id' => 1,
+            ],[
+                'route_id' => 4,
+                'road_id' => 2,
+            ],[
+                'route_id' => 4,
+                'road_id' => 3,
+            ],[
+                'route_id' => 4,
+                'road_id' => 4,
+            ],[
+                'route_id' => 4,
+                'road_id' => 10,
+            ]
+        ]);
+
+        DB::table('toll_unit')->insert([
+            [
+                'unit_id' => 1,
+                'toll_id' => 1,
+                'price' => 30,
+            ],[
+                'unit_id' => 1,
+                'toll_id' => 2,
+                'price' => 97,
+            ],[
+                'unit_id' => 1,
+                'toll_id' => 3,
+                'price' => 151,
+            ],[
+                'unit_id' => 1,
+                'toll_id' => 4,
+                'price' => 44,
+            ],[
+                'unit_id' => 1,
+                'toll_id' => 5,
+                'price' => 48,
+            ],[
+                'unit_id' => 2,
+                'toll_id' => 1,
+                'price' => 30,
+            ],[
+                'unit_id' => 2,
+                'toll_id' => 2,
+                'price' => 97,
+            ],[
+                'unit_id' => 2,
+                'toll_id' => 3,
+                'price' => 151,
+            ],[
+                'unit_id' => 2,
+                'toll_id' => 4,
+                'price' => 44,
+            ],[
+                'unit_id' => 2,
+                'toll_id' => 5,
+                'price' => 48,
+            ],[
+                'unit_id' => 3,
+                'toll_id' => 1,
+                'price' => 15,
+            ],[
+                'unit_id' => 3,
+                'toll_id' => 2,
+                'price' => 48,
+            ],[
+                'unit_id' => 3,
+                'toll_id' => 3,
+                'price' => 75,
+            ],[
+                'unit_id' => 3,
+                'toll_id' => 4,
+                'price' => 22,
+            ],[
+                'unit_id' => 3,
+                'toll_id' => 5,
+                'price' => 24,
+            ],[
+                'unit_id' => 4,
+                'toll_id' => 1,
+                'price' => 114,
+            ],[
+                'unit_id' => 4,
+                'toll_id' => 2,
+                'price' => 175,
+            ],[
+                'unit_id' => 4,
+                'toll_id' => 3,
+                'price' => 224,
+            ],[
+                'unit_id' => 4,
+                'toll_id' => 4,
+                'price' => 94,
+            ],[
+                'unit_id' => 4,
+                'toll_id' => 5,
+                'price' => 98,
+            ],[
+                'unit_id' => 5,
+                'toll_id' => 1,
+                'price' => 114,
+            ],[
+                'unit_id' => 5,
+                'toll_id' => 2,
+                'price' => 175,
+            ],[
+                'unit_id' => 5,
+                'toll_id' => 3,
+                'price' => 224,
+            ],[
+                'unit_id' => 5,
+                'toll_id' => 4,
+                'price' => 94,
+            ],[
+                'unit_id' => 5,
+                'toll_id' => 5,
+                'price' => 98,
+            ],[
+                'unit_id' => 6,
+                'toll_id' => 1,
+                'price' => 114,
+            ],[
+                'unit_id' => 6,
+                'toll_id' => 2,
+                'price' => 175,
+            ],[
+                'unit_id' => 6,
+                'toll_id' => 3,
+                'price' => 224,
+            ],[
+                'unit_id' => 6,
+                'toll_id' => 4,
+                'price' => 94,
+            ],[
+                'unit_id' => 6,
+                'toll_id' => 5,
+                'price' => 98,
+            ],[
+                'unit_id' => 7,
+                'toll_id' => 1,
+                'price' => 114,
+            ],[
+                'unit_id' => 7,
+                'toll_id' => 2,
+                'price' => 175,
+            ],[
+                'unit_id' => 7,
+                'toll_id' => 3,
+                'price' => 224,
+            ],[
+                'unit_id' => 7,
+                'toll_id' => 4,
+                'price' => 94,
+            ],[
+                'unit_id' => 7,
+                'toll_id' => 5,
+                'price' => 94,
+            ],[
+                'unit_id' => 8,
+                'toll_id' => 1,
+                'price' => 114,
+            ],[
+                'unit_id' => 8,
+                'toll_id' => 2,
+                'price' => 175,
+            ],[
+                'unit_id' => 8,
+                'toll_id' => 3,
+                'price' => 291,
+            ],[
+                'unit_id' => 8,
+                'toll_id' => 4,
+                'price' => 94,
+            ],[
+                'unit_id' => 8,
+                'toll_id' => 5,
+                'price' => 94,
+            ],[
+                'unit_id' => 9,
+                'toll_id' => 1,
+                'price' => 114,
+            ],[
+                'unit_id' => 9,
+                'toll_id' => 2,
+                'price' => 312,
+            ],[
+                'unit_id' => 9,
+                'toll_id' => 3,
+                'price' => 291,
+            ],[
+                'unit_id' => 9,
+                'toll_id' => 4,
+                'price' => 114,
+            ],[
+                'unit_id' => 9,
+                'toll_id' => 5,
+                'price' => 118,
+            ],[
+                'unit_id' => 10,
+                'toll_id' => 1,
+                'price' => 182,
+            ],[
+                'unit_id' => 10,
+                'toll_id' => 2,
+                'price' => 312,
+            ],[
+                'unit_id' => 10,
+                'toll_id' => 3,
+                'price' => 291,
+            ],[
+                'unit_id' => 10,
+                'toll_id' => 4,
+                'price' => 114,
+            ],[
+                'unit_id' => 10,
+                'toll_id' => 5,
+                'price' => 118,
+            ],[
+                'unit_id' => 11,
+                'toll_id' => 1,
+                'price' => 182,
+            ],[
+                'unit_id' => 11,
+                'toll_id' => 2,
+                'price' => 449,
+            ],[
+                'unit_id' => 11,
+                'toll_id' => 3,
+                'price' => 417,
+            ],[
+                'unit_id' => 11,
+                'toll_id' => 4,
+                'price' => 130,
+            ],[
+                'unit_id' => 11,
+                'toll_id' => 5,
+                'price' => 136,
+            ],[
+                'unit_id' => 12,
+                'toll_id' => 1,
+                'price' => 205,
+            ],[
+                'unit_id' => 12,
+                'toll_id' => 2,
+                'price' => 449,
+            ],[
+                'unit_id' => 12,
+                'toll_id' => 3,
+                'price' => 534,
+            ],[
+                'unit_id' => 12,
+                'toll_id' => 4,
+                'price' => 130,
+            ],[
+                'unit_id' => 12,
+                'toll_id' => 5,
+                'price' => 136,
+            ],[
+                'unit_id' => 13,
+                'toll_id' => 1,
+                'price' => 205,
+            ],[
+                'unit_id' => 13,
+                'toll_id' => 2,
+                'price' => 449,
+            ],[
+                'unit_id' => 13,
+                'toll_id' => 3,
+                'price' => 534,
+            ],[
+                'unit_id' => 13,
+                'toll_id' => 4,
+                'price' => 130,
+            ],[
+                'unit_id' => 13,
+                'toll_id' => 5,
+                'price' => 136,
+            ],[
+                'unit_id' => 14,
+                'toll_id' => 1,
+                'price' => 205,
+            ],[
+                'unit_id' => 14,
+                'toll_id' => 2,
+                'price' => 449,
+            ],[
+                'unit_id' => 14,
+                'toll_id' => 3,
+                'price' => 534,
+            ],[
+                'unit_id' => 14,
+                'toll_id' => 4,
+                'price' => 130,
+            ],[
+                'unit_id' => 14,
+                'toll_id' => 5,
+                'price' => 136,
             ]
         ]);
 

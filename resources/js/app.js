@@ -1,5 +1,8 @@
 import './bootstrap';
 import '../css/app.css';
+import flatpickr from 'flatpickr';
+import "flatpickr/dist/flatpickr.css";
+import "flatpickr/dist/themes/dark.css";
 
 import { createApp, h } from 'vue';
 import { createInertiaApp } from '@inertiajs/vue3';

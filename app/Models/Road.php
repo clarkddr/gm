@@ -11,7 +11,7 @@ class Road extends Model
     use HasFactory;
 
     public function toll(){
-        return $this->belongsTo(Toll::class);
+        return $this->belongsTo(Toll::class)->withDefault('');
     }
 
     public function routes (){

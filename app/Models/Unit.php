@@ -9,4 +9,9 @@ class Unit extends Model
 {
     /** @use HasFactory<\Database\Factories\UnitFactory> */
     use HasFactory;
+    protected $guarded = [];
+
+    public function tolls(){
+        return $this->belongsToMany(Unit::class)->withPivot('price');
+    }
 }
